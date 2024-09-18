@@ -4,7 +4,7 @@ import { getWeather } from '../../store/actions/getWeather';
 import { toDateFunction } from '../../helpers/toDateFunction';
 import { useAppDispatch } from '../../store/configureStore';
 
-export function GfGWeatherApp() {
+export function WeatherBody() {
     const [input, setInput] = useState('');
     const weather = useSelector((store: any) => store.weather)
     const dispatch = useAppDispatch();
@@ -48,7 +48,7 @@ export function GfGWeatherApp() {
                 <div>
                     <div className="city-name">
                         <h2>
-                            {weather.name}, <span>{weather.sys.country}</span>
+                            {weather.name}, <span>{weather.sys?.country}</span>
                         </h2>
                     </div>
                     <div className="date">
@@ -57,8 +57,8 @@ export function GfGWeatherApp() {
                     <div className="icon-temp">
                         <img
                             className=""
-                            src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-                            alt={weather.weather[0].description}
+                            src={`https://openweathermap.org/img/wn/${weather.weather[0]?.icon}@2x.png`}
+                            alt={weather.weather[0]?.description}
                         />
                         {Math.round(weather.main.temp)}
                         <sup className="deg">°C</sup>

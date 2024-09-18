@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
-import { WeatherShowMain, WeatherShowDaily } from "../../../components";
-import { GfGWeatherApp } from "../../../components/GWeather/GWeather";
+import { WeatherShowDaily } from "../../../components";
+import { WeatherBody } from "../../../components";
+import './bodyStyles.scss';
 
 export function Body() {
 
@@ -12,15 +13,14 @@ export function Body() {
   return (
     <div>
       <div>
-        <GfGWeatherApp />
+        <WeatherBody />
       </div>
-      <div>
-        {
+      <div className="days-container">
+        {/* {
           daily.map((el: any) => {
             return <WeatherShowDaily item={el} isFahrenheight={isFahrenheight} />
           })
-        }
-
+        } */}
       </div>
     </div>
   )
